@@ -2,7 +2,7 @@
     var svg    = d3.select('svg').call(d3.drag().on('drag', dragged).on('start', dragStart).on('end', dragEnd)).append('g');
     var color  = d3.scaleOrdinal(d3.schemeCategory20);
     var mx, my, mouseX, mouseY;
-console.log("startANgle " + startAngle ) 
+
     var grid3d = d3._3d()
         .shape('GRID', 20)
         .origin(origin)
@@ -38,9 +38,9 @@ console.log("startANgle " + startAngle )
             .attr('class', '_3d grid')
             .merge(xGrid)
             .attr('stroke', 'black')
-            .attr('stroke-width', 0.1)
+            .attr('stroke-width', 0.3)
             .attr('fill', function(d){ return d.ccw ? 'lightgrey' : '#717171'; })
-            .attr('fill-opacity', 0.4)
+            .attr('fill-opacity', 0.9)
             .attr('d', grid3d.draw);
 
         xGrid.exit().remove();
@@ -118,11 +118,7 @@ console.log("startANgle " + startAngle )
         for(var z = -j; z < j; z++){
             for(var x = -j; x < j; x++){
                 xGrid.push([x, 1, z]);
-                // scatter.push({x: x, y: d3.randomUniform(0, -10)(), z: z, id: 'point_' + cnt++});
-const ry = d3.randomUniform(0, -10)() 		
-const rx = d3.randomUniform(20, -10)() 		
-// console.log( " x " + x + "   y " + ry ) 
-                scatter.push({x: rx, y: ry, z: z, id: 'point_' + cnt++});
+                scatter.push({x: x, y: d3.randomUniform(0, -10)(), z: z, id: 'point_' + cnt++});
             }
         }
 

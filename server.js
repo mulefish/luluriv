@@ -22,16 +22,27 @@ const configure = () => {
 configure();
 
 let count = 0;
-function showHit(msg) {
+function log(msg) {
   console.log(++count, msg);
 }
 
 ////////////////////////////// LOGIC ///////////////////////////////////////////
 
-
+app.get('/orig.html', function (req, res) {
+  log("orig.html");
+  res.sendFile('orig.html', { root: __dirname });
+})
 app.get('/', function (req, res) {
-  showHit("index.html");
+  log("index.html");
   res.sendFile('index.html', { root: __dirname });
+});
+app.get('/index.js', function (req, res) {
+  log("index.js");
+  res.sendFile('index.js', { root: __dirname });
+});
+app.get('/style.css', function (req, res) {
+  log("style.css");
+  res.sendFile('style.css', { root: __dirname });
 });
 
 const server = app.listen(port, function () {
