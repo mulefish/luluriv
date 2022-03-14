@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
+<html>
+<head>
 <link rel="stylesheet" href="style.css">
-<script src="https://unpkg.com/d3-3d/build/d3-3d.min.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
+<script src="http://www.billdwhite.com/wordpress/wp-content/js/threejs/examples/js/renderers/CSS3DRenderer.js"></script>
+<script src="http://www.billdwhite.com/wordpress/wp-content/js/threejs/examples/js/controls/TrackballControls.js"></script>
+<script src="http://www.billdwhite.com/wordpress/wp-content/js/threejs/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.js"></script></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
 <body>
-<!-- <svg width="960" height="500"></svg> --> 
-
-<div id='display'></div>
-<hr/>
-<button>update</button>
-
-<script>
-	const w = window.innerWidth;
-	const h = window.innerHeight * 0.6; 
-	const node = `<svg width="${w}" height="${h}"></svg>`; 
-	document.getElementById("display").innerHTML = node; 
-</script> 
-
-
+  <div id="container_fekofu"></div>
+  <div class="instructions">[Drag with mouse to move/rotate; mouse wheel to zoom; right-drag to pan]</div>
 <script src="index.js"></script>
-
-</body> 
-</html> 
+</body>
+</html>
